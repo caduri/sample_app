@@ -135,10 +135,7 @@ describe "User pages" do
       let(:new_name)  { "New Name" }
       let(:new_email) { "new@example.com" }
       before do
-        fill_in "Name",             with: new_name
-        fill_in "Email",            with: new_email
-        fill_in "Password",         with: user.password
-        fill_in "Confirm Password", with: user.password
+        valid_signup name: new_name, email: new_email, password: user.password, confirm: user.password
         click_button "Save changes"
       end
 
